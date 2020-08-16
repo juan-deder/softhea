@@ -1,0 +1,17 @@
+$btn-text-transform: none;
+
+$code-background-color: inherit;
+$code-color: inherit;
+$code-kbd-font-weight: inherit;
+
+.v-list-item__avatar {
+    justify-content: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: revert;
+}
+
+.v-tab {
+    letter-spacing: 0;
+}

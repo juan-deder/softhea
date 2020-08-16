@@ -1,0 +1,55 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+type BlogType {
+    author: UserType!
+    content: String!
+    id: ID!
+    publishedAt: DateTime!
+    tags: [TagType!]!
+    title: String!
+    updatedAt: DateTime!
+}
+
+type Query {
+    authed: UserType
+    blogs(tags: [String]): [BlogType]
+    tags: [TagType]
+    user(username: String!): UserType
+}
+
+type TagType {
+    blogs: [BlogType!]!
+    id: ID!
+    name: String!
+}
+
+type UserType {
+    blogSet: [BlogType!]!
+    dateJoined: DateTime!
+    email: String!
+    firstName: String!
+    id: ID!
+    "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
+    isActive: Boolean!
+    "Designates whether the user can log into this admin site."
+    isStaff: Boolean!
+    "Designates that this user has all permissions without explicitly assigning them."
+    isSuperuser: Boolean!
+    lastLogin: DateTime
+    lastName: String!
+    password: String!
+    "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+    username: String!
+}
+
+
+"""
+The `DateTime` scalar type represents a DateTime
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar DateTime
